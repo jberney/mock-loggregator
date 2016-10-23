@@ -1,7 +1,7 @@
 const uuid = require('node-uuid');
 
 module.exports = {
-    getRecentLogs(state, LoggregatorEncoder) {
+    getRecentLogs({state, LoggregatorEncoder}) {
         return (req, res) => {
             const boundary = uuid.v4();
             res.writeHead(200, {

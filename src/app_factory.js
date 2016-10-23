@@ -3,7 +3,7 @@ const express = require('express');
 const RouterFactory = require('./router_factory');
 
 module.exports = {
-    newApp(state) {
+    newApp({state, LoggregatorEncoder}) {
         const app = express();
         app.use(function (req, res, next) {
             let log = `[LOG] ${req.method} ${req.url}`;
@@ -11,7 +11,7 @@ module.exports = {
             console.log(log);
             next();
         });
-        app.use(RouterFactory.newRouter(state));
+        app.use(RouterFactory.newRouter({state, LoggregatorEncoder}));
         return app;
     }
 };
