@@ -1,0 +1,17 @@
+{
+  "name": "mock-loggregator",
+  "version": "0.0.1",
+  "main": "src/server_factory.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "node-uuid": "^1.4.7"
+  },
+  "devDependencies": {
+    "coveralls": "^2.11.14",
+    "istanbul": "^0.4.5",
+    "jasmine": "^2.5.2"
+  },
+  "scripts": {
+    "test": "istanbul cover --root ./src --include-all-sources node_modules/.bin/jasmine"
+  }
+}
